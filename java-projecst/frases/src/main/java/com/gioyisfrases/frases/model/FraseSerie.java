@@ -1,15 +1,24 @@
 package com.gioyisfrases.frases.model;
 
-public class FraseSerie {
-    private String author;
-    private String frase;
+import jakarta.persistence.*;
 
-    public String getAuthor() {
-        return author;
+@Entity
+@Table(name = "frases")
+public class FraseSerie {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String titulo;
+    private String frase;
+    private String actor;
+    private String poster;
+
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getFrase() {
@@ -18,5 +27,21 @@ public class FraseSerie {
 
     public void setFrase(String frase) {
         this.frase = frase;
+    }
+
+    public String getActor() {
+        return actor;
+    }
+
+    public void setActor(String actor) {
+        this.actor = actor;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 }
